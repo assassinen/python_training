@@ -1,0 +1,49 @@
+============================= test session starts =============================
+platform win32 -- Python 3.4.0, pytest-3.0.3, py-1.4.31, pluggy-0.4.0
+rootdir: C:\shareFolder\Dropbox\python_training, inifile: 
+collected 1 items
+
+problem_test.py F
+
+================================== FAILURES ===================================
+_______________________ problem_test.test_problem_test ________________________
+
+self = <problem_test.problem_test testMethod=test_problem_test>
+
+    def setUp(self):
+>       self.wd = WebDriver()
+
+problem_test.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+env\lib\site-packages\selenium\webdriver\firefox\webdriver.py:80: in __init__
+    self.binary, timeout)
+env\lib\site-packages\selenium\webdriver\firefox\extension_connection.py:52: in __init__
+    self.binary.launch_browser(self.profile, timeout=timeout)
+env\lib\site-packages\selenium\webdriver\firefox\firefox_binary.py:68: in launch_browser
+    self._wait_until_connectable(timeout=timeout)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <selenium.webdriver.firefox.firefox_binary.FirefoxBinary object at 0x00000000040A26A0>
+timeout = 30
+
+    def _wait_until_connectable(self, timeout=30):
+        """Blocks until the extension is connectable in the firefox."""
+        count = 0
+        while not utils.is_connectable(self.profile.port):
+            if self.process.poll() is not None:
+                # Browser has exited
+                raise WebDriverException(
+                    "The browser appears to have exited "
+                    "before we could connect. If you specified a log_file in "
+                    "the FirefoxBinary constructor, check it for details.")
+            if count >= timeout:
+                self.kill()
+                raise WebDriverException(
+                    "Can't load the profile. Profile "
+                    "Dir: %s If you specified a log_file in the "
+                    "FirefoxBinary constructor, check it for details."
+>                   % (self.profile.path))
+E               selenium.common.exceptions.WebDriverException: Message: Can't load the profile. Profile Dir: C:\Users\NOVIKO~1\AppData\Local\Temp\tmpwyhvsjwt If you specified a log_file in the FirefoxBinary constructor, check it for details.
+
+env\lib\site-packages\selenium\webdriver\firefox\firefox_binary.py:108: WebDriverException
+========================== 1 failed in 92.60 seconds ==========================
