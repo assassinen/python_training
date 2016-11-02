@@ -18,7 +18,11 @@ class test_add_full_entry(unittest.TestCase):
     def test_test_add_full_entry(self):
         success = True
         wd = self.wd
+
+        # open_home_page
         wd.get("http://localhost/addressbook/")
+
+        # login
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
         wd.find_element_by_name("pass").send_keys("secret")
@@ -26,6 +30,8 @@ class test_add_full_entry(unittest.TestCase):
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys("admin")
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
+
+        # create_book_entry
         wd.find_element_by_link_text("add new").click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
@@ -98,6 +104,8 @@ class test_add_full_entry(unittest.TestCase):
         wd.find_element_by_name("notes").clear()
         wd.find_element_by_name("notes").send_keys("a")
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+
+        # logout
         wd.find_element_by_link_text("Logout").click()
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").send_keys("\\undefined")
