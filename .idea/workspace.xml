@@ -25,11 +25,31 @@
             <file leaf-file-name="test_add_group.py" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/test_add_group.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.39347604" vertical-offset="447" max-vertical-offset="1479">
-                    <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="29" />
+                  <state vertical-scroll-proportion="0.3761468" vertical-offset="498" max-vertical-offset="1479">
+                    <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
                     <folding>
                       <element signature="e#24#82#0" expanded="true" />
                     </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="group.py" pinned="false" current="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/group.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+                    <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="28" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="book_entry.py" pinned="false" current="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/book_entry.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+                    <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="15" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
@@ -45,22 +65,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="group.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/group.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test_add_entry.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_add_entry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.87369984" vertical-offset="432" max-vertical-offset="1258">
-              <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="0.11589896" vertical-offset="602" max-vertical-offset="1275">
+              <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+              <folding>
+                <element signature="e#24#82#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,8 +103,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/group.py" />
-        <option value="$PROJECT_DIR$/test_add_group.py" />
         <option value="$PROJECT_DIR$/test_add_full_entry.py" />
+        <option value="$PROJECT_DIR$/book_entry.py" />
+        <option value="$PROJECT_DIR$/test_add_group.py" />
         <option value="$PROJECT_DIR$/test_add_entry.py" />
       </list>
     </option>
@@ -432,8 +445,8 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry and test_test_add_entry" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_add_full_entry and test_test_add_full_entry" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in test_add_full_entry and test_test_add_full_entry" />
         <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in problem_test" />
         <item index="4" class="java.lang.String" itemvalue="Python tests.py.test in problem_test and test_add_empty_group" />
       </list>
@@ -513,14 +526,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/group.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_add_full_entry.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2108">
@@ -529,10 +534,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/book_entry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/group.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_add_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39347604" vertical-offset="447" max-vertical-offset="1479">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.3761468" vertical-offset="498" max-vertical-offset="1479">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
           </folding>
@@ -541,9 +562,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_add_entry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87369984" vertical-offset="432" max-vertical-offset="1258">
-          <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-          <folding />
+        <state vertical-scroll-proportion="0.11589896" vertical-offset="602" max-vertical-offset="1275">
+          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+          <folding>
+            <element signature="e#24#82#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
