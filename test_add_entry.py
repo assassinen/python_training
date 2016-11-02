@@ -32,18 +32,11 @@ class test_add_entry(unittest.TestCase):
         # open add address book entry
         wd.find_element_by_link_text("add new").click()
         # fill address book entry form
-        wd.find_element_by_name("firstname").click()
-        wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys(entry.firstname)
-        wd.find_element_by_name("middlename").click()
-        wd.find_element_by_name("middlename").clear()
-        wd.find_element_by_name("middlename").send_keys(entry.middlename)
-        wd.find_element_by_name("lastname").click()
-        wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys(entry.lastname)
-        wd.find_element_by_name("nickname").click()
-        wd.find_element_by_name("nickname").clear()
-        wd.find_element_by_name("nickname").send_keys(entry.nickname)
+        for key, item in entry.parament.items():
+            wd.find_element_by_name(key).click()
+            wd.find_element_by_name(key).clear()
+            wd.find_element_by_name(key).send_keys(item)
+
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
     def return_to_home_page(self, wd):
@@ -58,7 +51,8 @@ class test_add_entry(unittest.TestCase):
         wd = self.wd
         self.open_home_page(wd)
         self.login(wd)
-        self.add_book_entry(wd, BookEntry(firstname="Дарья", middlename="Андреевна", lastname="Литвинеко", nickname="daliVdali"))
+        addEntry = BookEntry(firstname="Светлана", middlename="Иларионовна", lastname="Смирнова", work="безработный", address="Не дом и не улица")
+        self.add_book_entry(wd, addEntry)
         self.return_to_home_page(wd)
         self.logout(success)
     

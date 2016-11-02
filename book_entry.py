@@ -2,8 +2,7 @@ __author__ = 'NovikovII'
 
 
 class BookEntry:
-    def __init__(self, firstname, middlename, lastname, nickname):
-        self.firstname = firstname
-        self.middlename = middlename
-        self.lastname = lastname
-        self.nickname = nickname
+    def __init__(self, **kwargs):
+        self.parament = {}
+        for key, item in kwargs.items():
+            self.parament[key] = item
