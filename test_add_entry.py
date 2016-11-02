@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from selenium.webdriver.firefox.webdriver import WebDriver
-from selenium.webdriver.common.action_chains import ActionChains
-import time, unittest
+import unittest
+from book_entry import BookEntry
+
 
 def is_alert_present(wd):
     try:
@@ -27,22 +28,22 @@ class test_add_entry(unittest.TestCase):
         wd.find_element_by_name("user").send_keys("admin")
         wd.find_element_by_xpath("//form[@id='LoginForm']/input[3]").click()
 
-    def add_book_entry(self, wd):
+    def add_book_entry(self, wd, firstname, middlename, lastname, nickname):
         # open add address book entry
         wd.find_element_by_link_text("add new").click()
         # fill address book entry form
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys("Иван")
+        wd.find_element_by_name("firstname").send_keys(firstname)
         wd.find_element_by_name("middlename").click()
         wd.find_element_by_name("middlename").clear()
-        wd.find_element_by_name("middlename").send_keys("Иванович")
+        wd.find_element_by_name("middlename").send_keys(middlename)
         wd.find_element_by_name("lastname").click()
         wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys("Новиков")
+        wd.find_element_by_name("lastname").send_keys(lastname)
         wd.find_element_by_name("nickname").click()
         wd.find_element_by_name("nickname").clear()
-        wd.find_element_by_name("nickname").send_keys("vananova")
+        wd.find_element_by_name("nickname").send_keys(nickname)
         wd.find_element_by_name("title").click()
         wd.find_element_by_name("title").send_keys("\\9")
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
@@ -59,7 +60,7 @@ class test_add_entry(unittest.TestCase):
         wd = self.wd
         self.open_home_page(wd)
         self.login(wd)
-        self.add_book_entry(wd)
+        self.add_book_entry(wd, "Иван", "Иванович", "Новиков", "vananova")
         self.return_to_home_page(wd)
         self.logout(success)
     
