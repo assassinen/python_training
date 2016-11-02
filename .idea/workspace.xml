@@ -25,8 +25,8 @@
             <file leaf-file-name="test_add_group.py" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/test_add_group.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.72782874" vertical-offset="102" max-vertical-offset="1496">
-                    <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+                  <state vertical-scroll-proportion="0.39347604" vertical-offset="447" max-vertical-offset="1479">
+                    <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="29" />
                     <folding>
                       <element signature="e#24#82#0" expanded="true" />
                     </folding>
@@ -58,8 +58,18 @@
       <file leaf-file-name="test_add_entry.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_add_entry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6716196" vertical-offset="313" max-vertical-offset="1037">
-              <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.87369984" vertical-offset="432" max-vertical-offset="1258">
+              <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_add_full_entry.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_add_full_entry.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2108">
+              <caret line="105" column="79" selection-start-line="105" selection-start-column="79" selection-end-line="105" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -80,8 +90,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test_add_group.py" />
         <option value="$PROJECT_DIR$/group.py" />
+        <option value="$PROJECT_DIR$/test_add_group.py" />
+        <option value="$PROJECT_DIR$/test_add_full_entry.py" />
         <option value="$PROJECT_DIR$/test_add_entry.py" />
       </list>
     </option>
@@ -160,32 +171,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python tests.py.test in test_add_entry and test_test_add_entry">
-    <configuration default="false" name="py.test in problem_test and test_problem_test" type="tests" factoryName="py.test" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python_training" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="testToRun" value="$PROJECT_DIR$/test_add_group.py" />
-      <option name="keywords" value="problem_test and test_problem_test" />
-      <option name="params" value="" />
-      <option name="USE_PARAM" value="false" />
-      <option name="USE_KEYWORD" value="true" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="py.test in problem_test" type="tests" factoryName="py.test" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -283,6 +268,32 @@
       <option name="USE_PATTERN" value="false" />
       <option name="testToRun" value="$PROJECT_DIR$/test_add_entry.py" />
       <option name="keywords" value="test_add_entry and test_test_add_entry" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="true" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="py.test in test_add_full_entry and test_test_add_full_entry" type="tests" factoryName="py.test" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="python_training" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="$PROJECT_DIR$/test_add_full_entry.py" />
+      <option name="keywords" value="test_add_full_entry and test_test_add_full_entry" />
       <option name="params" value="" />
       <option name="USE_PARAM" value="false" />
       <option name="USE_KEYWORD" value="true" />
@@ -412,19 +423,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in problem_test and test_problem_test" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in problem_test" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in problem_test and test_add_empty_group" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry and test_test_add_entry" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in problem_test" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in problem_test and test_add_empty_group" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry and test_test_add_entry" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.py.test in test_add_full_entry and test_test_add_full_entry" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry and test_test_add_entry" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in problem_test" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in problem_test and test_add_empty_group" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.py.test in problem_test and test_problem_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.py.test in test_add_full_entry and test_test_add_full_entry" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.py.test in test_add_entry" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.py.test in problem_test" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.py.test in problem_test and test_add_empty_group" />
       </list>
     </recent_temporary>
   </component>
@@ -510,10 +521,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test_add_full_entry.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2108">
+          <caret line="105" column="79" selection-start-line="105" selection-start-column="79" selection-end-line="105" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_add_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72782874" vertical-offset="102" max-vertical-offset="1496">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.39347604" vertical-offset="447" max-vertical-offset="1479">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="29" />
           <folding>
             <element signature="e#24#82#0" expanded="true" />
           </folding>
@@ -522,8 +541,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_add_entry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6716196" vertical-offset="313" max-vertical-offset="1037">
-          <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.87369984" vertical-offset="432" max-vertical-offset="1258">
+          <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
           <folding />
         </state>
       </provider>
