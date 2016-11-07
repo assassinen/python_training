@@ -46,9 +46,24 @@ class Application:
         wd.find_element_by_name("submit").click()
         self.return_to_groups_page()
 
+    def add_book_entry(self, entry):
+        wd = self.wd
+        # open add address book entry
+        wd.find_element_by_link_text("add new").click()
+        # fill address book entry form
+        for key, item in entry.parament.items():
+            wd.find_element_by_name(key).click()
+            wd.find_element_by_name(key).clear()
+            wd.find_element_by_name(key).send_keys(item)
+        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+
     def return_to_groups_page(self):
         wd = self.wd
         wd.find_element_by_link_text("group page").click()
+
+    def return_to_home_page(self):
+        wd = self.wd
+        wd.find_element_by_link_text("home page").click()
 
     def logout(self):
         wd = self.wd
