@@ -20,6 +20,7 @@ class test_add_entry(unittest.TestCase):
         wd.get("http://localhost/addressbook/")
 
     def login(self, wd):
+        self.open_home_page(wd)
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
         wd.find_element_by_name("pass").send_keys("secret")
@@ -49,9 +50,8 @@ class test_add_entry(unittest.TestCase):
     def test_test_add_entry(self):
         success = True
         wd = self.wd
-        self.open_home_page(wd)
         self.login(wd)
-        addEntry = BookEntry(firstname="Светлана", middlename="Иларионовна", lastname="Смирнова", work="безработный", address="Не дом и не улица")
+        addEntry = BookEntry(firstname="Светлана", middlename="Иларионовна", lastname="Смирнова", work="безработный", address="Не дом и не улица", mobile='8915223344')
         self.add_book_entry(wd, addEntry)
         self.return_to_home_page(wd)
         self.logout(success)
