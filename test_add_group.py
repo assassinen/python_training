@@ -16,15 +16,13 @@ class problem_test(unittest.TestCase):
     def setUp(self):
         self.app = Application()
 
-
     def test_problem_test(self):
-        success = True
         self.app.login(username="admin", password="secret")
         self.app.create_group(Group(name="test", header="test", footer="test"))
         self.app.logout()
 
     def tearDown(self):
-        self.wd.quit()
+        self.app.destroy()
 
 if __name__ == '__main__':
     unittest.main()
