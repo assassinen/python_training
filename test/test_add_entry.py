@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
-from book_entry import BookEntry
-from application import Application
+from model.book_entry import BookEntry
+from fixture.application import Application
 
 @pytest.fixture
 def app(request):
