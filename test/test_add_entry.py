@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import pytest
-from model.book_entry import BookEntry
+from model.book import BookEntry
 from fixture.application import Application
 
 
@@ -11,8 +11,8 @@ def app(request):
     return fixture
 
 
-def test_test_add_entry(app):
+def test_add_entry(app):
     app.session.login(username="admin", password="secret")
     addEntry = BookEntry(firstname="Алексей", middlename="Иларионовна", lastname="Баранцев", work="суперпрепод", address="Не дом и не улица", mobile='8915223344')
-    app.add_book_entry(addEntry)
+    app.book.add_entry(addEntry)
     app.session.logout()
