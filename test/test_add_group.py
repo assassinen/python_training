@@ -12,7 +12,7 @@ def app(request):
 
 
 def test_problem_test(app):
-    app.login(username="admin", password="secret")
+    app.session.login(username="admin", password="secret")
     app.create_group(Group(name="test", header="test", footer="test"))
-    app.logout()
+    app.session.logout()
 
