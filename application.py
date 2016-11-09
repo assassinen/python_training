@@ -55,7 +55,6 @@ class Application:
             wd.find_element_by_name(key).click()
             wd.find_element_by_name(key).clear()
             wd.find_element_by_name(key).send_keys(item)
-        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
     def return_to_groups_page(self):
         wd = self.wd
