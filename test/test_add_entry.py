@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from model.book import BookEntry
-from model.group import Group
 
 
 def test_add_entry(app):
