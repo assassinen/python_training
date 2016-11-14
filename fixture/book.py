@@ -16,6 +16,7 @@ class BookHelper:
             wd.find_element_by_name(key).clear()
             wd.find_element_by_name(key).send_keys(item)
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        wd.get("http://localhost/addressbook/")
 
     def delete_first_entry(self):
         wd = self.app.wd
