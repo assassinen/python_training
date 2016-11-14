@@ -5,8 +5,9 @@ from model.group import Group
 
 def test_add_group(app):
     app.group.create(Group(name="test", header="test", footer="test"))
-    app.session.logout()
+    #app.session.logout()
 
 def test_add_empty_group(app):
-    app.group.create(Group(name="test1", header="test1", footer="test1"))
+    for i in range (1, 6):
+        app.group.create(Group(name="test"+str(i), header="test"+str(i), footer="test"+str(i)))
 

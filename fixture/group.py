@@ -1,6 +1,5 @@
 __author__ = 'NovikovII'
 
-
 class GroupHelper:
 
     def __init__(self, app):
@@ -75,3 +74,15 @@ class GroupHelper:
         wd = self.app.wd
         wd.find_element_by_link_text("group page").click()
 
+    def count(self):
+        wd = self.app.wd
+        self.open_groups_page()
+        return len(wd.find_elements_by_name("selected[]"))
+
+    def delete_all_group(self):
+        wd = self.app.wd
+        self.open_groups_page()
+        for i in range(1, self.count() + 1):
+            wd.find_element_by_xpath("//div/div[4]/form/span["+str(i)+"]/input").click()
+        wd.find_element_by_name("delete").click()
+        self.return_to_groups_page()
