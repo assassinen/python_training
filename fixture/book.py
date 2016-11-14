@@ -39,3 +39,7 @@ class BookHelper:
         wd.find_element_by_name("update").click()
         #wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
 
+    def count(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("home").click()
+        return len(wd.find_elements_by_name("selected[]"))
