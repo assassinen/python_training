@@ -8,9 +8,7 @@ class BookHelper:
 
     def add_entry(self, entry):
         wd = self.app.wd
-        # open add address book entry
         wd.find_element_by_link_text("add new").click()
-        # fill address book entry form
         for key, item in entry.parament.items():
             wd.find_element_by_name(key).click()
             wd.find_element_by_name(key).clear()
@@ -19,17 +17,14 @@ class BookHelper:
 
     def delete_first_entry(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
-        # select
+        self.open_home_page()
         wd.find_element_by_name("selected[]").click()
-        # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
 
     def edit_first_entry(self, entry):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
-        #wd.find_element_by_link_text("add new").click()
+        self.open_home_page()
 
         wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
         for key, item in entry.parament.items():
@@ -37,9 +32,13 @@ class BookHelper:
             wd.find_element_by_name(key).clear()
             wd.find_element_by_name(key).send_keys(item)
         wd.find_element_by_name("update").click()
-        #wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+
+    def open_home_page(self):
+        wd = self.app.wd
+        if not wd.current_url.endswith("/addressbook/"):
+            wd.find_element_by_link_text("home").click()
 
     def count(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
+        self.open_home_page()
         return len(wd.find_elements_by_name("selected[]"))

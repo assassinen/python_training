@@ -12,6 +12,6 @@ def test_delele_first_group(app):
 
 def test_delele_all_group(app):
     if app.group.count() == 0:
-        for i in range(1, 6):
+        for i in range(1, 2):
             app.group.create(Group(name="test"+str(i), header="test"+str(i), footer="test"+str(i)))
     app.group.delete_all_group()
