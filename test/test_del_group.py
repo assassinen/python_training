@@ -12,15 +12,14 @@ def test_delele_first_group(app):
     new_groups = app.group.get_group_list()
     assert len(old_groups) - 1 == len(new_groups)
     old_groups[0:1] = []
-    
     assert old_groups == new_groups
 
 
-# def test_delele_all_group(app):
-#     if app.group.count() == 0:
-#         for i in range(1, 2):
-#             app.group.create(Group(name="test"+str(i), header="test"+str(i), footer="test"+str(i)))
-#     app.group.delete_all_group()
-#     new_groups = app.group.get_group_list()
-#     assert 0 == len(new_groups)
+def test_delele_all_group(app):
+    if app.group.count() == 0:
+        for i in range(1, 2):
+            app.group.create(Group(name="test"+str(i), header="test"+str(i), footer="test"+str(i)))
+    app.group.delete_all_group()
+    new_groups = app.group.get_group_list()
+    assert 0 == len(new_groups)
 
