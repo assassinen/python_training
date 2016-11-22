@@ -3,6 +3,8 @@ from model.book import BookEntry
 
 
 def test_add_entry(app):
+    old_entry = app.book.get_entry_list()
     addEntry = BookEntry(firstname="Алексей", middlename="Иларионовна", lastname="Баранцев", work="суперпрепод", address="Не дом и не улица", mobile='8915223344')
     app.book.add_entry(addEntry)
-    app.book.add_entry(addEntry)
+    new_entry = app.book.get_entry_list()
+    assert len(old_entry) + 1 == len(new_entry)

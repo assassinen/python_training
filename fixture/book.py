@@ -1,5 +1,6 @@
 __author__ = 'NovikovII'
 
+from model.book import BookEntry
 
 class BookHelper:
 
@@ -42,3 +43,14 @@ class BookHelper:
         wd = self.app.wd
         self.open_home_page()
         return len(wd.find_elements_by_name("selected[]"))
+
+    def get_entry_list(self):
+        wd = self.app.wd
+        self.open_home_page()
+        entry = []
+        for element in wd.find_elements_by_name("entry"):
+            lastname = element.find_elements_by_tag_name("td")[1].text
+            firstname = element.find_elements_by_tag_name("td")[2].text
+            id = element.find_element_by_name("selected[]").get_attribute("value")
+            entry.append(BookEntry(lastname=lastname, firstname=firstname, id=id))
+        return entry
