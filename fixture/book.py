@@ -19,18 +19,23 @@ class BookHelper:
         self.entry_cache = None
 
     def delete_first_entry(self):
+        self.delete_entry_by_index(0)
+
+    def delete_entry_by_index(self, index):
         wd = self.app.wd
         self.open_home_page()
-        wd.find_element_by_name("selected[]").click()
+        wd.find_elements_by_name("selected[]")[index].click()
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
         self.entry_cache = None
 
     def edit_first_entry(self, entry):
+        self.edit_entry_by_index(0, entry)
+
+    def edit_entry_by_index(self, index, entry):
         wd = self.app.wd
         self.open_home_page()
-
-        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img").click()
+        wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr["+str(index+2)+"]/td[8]/a/img").click()
         for key, item in entry.parament.items():
             if key != 'id':
                 wd.find_element_by_name(key).click()
@@ -38,6 +43,7 @@ class BookHelper:
                 wd.find_element_by_name(key).send_keys(item)
         wd.find_element_by_name("update").click()
         self.entry_cache = None
+
 
     def open_home_page(self):
         wd = self.app.wd
