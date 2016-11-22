@@ -16,9 +16,9 @@ def test_edit_entry(app):
     old_entry[0] = addEntry
     #вносим изменения
     app.book.edit_first_entry(addEntry)
+    #сравниваем количество записей до и после именений
+    assert len(old_entry) == app.book.count()
     #получаем список контактов с web-страницы после изменения
     new_entry = app.book.get_entry_list()
     #сравниваем списко контактов до и после изменений
     assert sorted(old_entry, key=BookEntry.id_or_max) == sorted(new_entry, key=BookEntry.id_or_max)
-    #сравниваем количество записей до и после именений
-    assert len(old_entry) == len(new_entry)

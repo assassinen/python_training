@@ -16,6 +16,7 @@ class BookHelper:
                 wd.find_element_by_name(key).clear()
                 wd.find_element_by_name(key).send_keys(item)
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        self.entry_cache = None
 
     def delete_first_entry(self):
         wd = self.app.wd
@@ -23,6 +24,7 @@ class BookHelper:
         wd.find_element_by_name("selected[]").click()
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
+        self.entry_cache = None
 
     def edit_first_entry(self, entry):
         wd = self.app.wd
@@ -35,6 +37,7 @@ class BookHelper:
                 wd.find_element_by_name(key).clear()
                 wd.find_element_by_name(key).send_keys(item)
         wd.find_element_by_name("update").click()
+        self.entry_cache = None
 
     def open_home_page(self):
         wd = self.app.wd
@@ -46,13 +49,16 @@ class BookHelper:
         self.open_home_page()
         return len(wd.find_elements_by_name("selected[]"))
 
+    entry_cache = None
+
     def get_entry_list(self):
-        wd = self.app.wd
-        self.open_home_page()
-        entry = []
-        for element in wd.find_elements_by_name("entry"):
-            lastname = element.find_elements_by_tag_name("td")[1].text
-            firstname = element.find_elements_by_tag_name("td")[2].text
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            entry.append(BookEntry(lastname=lastname, firstname=firstname, id=id))
-        return entry
+        if self.entry_cache is None:
+            wd = self.app.wd
+            self.open_home_page()
+            self.entry_cache = []
+            for element in wd.find_elements_by_name("entry"):
+                lastname = element.find_elements_by_tag_name("td")[1].text
+                firstname = element.find_elements_by_tag_name("td")[2].text
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                self.entry_cache.append(BookEntry(lastname=lastname, firstname=firstname, id=id))
+        return list(self.entry_cache)

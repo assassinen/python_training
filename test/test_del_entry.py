@@ -8,8 +8,8 @@ def test_delete_first_entry(app):
         app.book.add_entry(addEntry)
     old_entry = app.book.get_entry_list()
     app.book.delete_first_entry()
+    assert len(old_entry) - 1 == app.book.count()
     new_entry = app.book.get_entry_list()
-    assert len(old_entry) - 1 == len(new_entry)
     old_entry[0:1] = []
     assert old_entry == new_entry
 
@@ -17,7 +17,8 @@ def test_delete_all_entry(app):
     old_entry = app.book.get_entry_list()
     while len(app.book.get_entry_list()):
         app.book.delete_first_entry()
+        assert len(old_entry) - 1 == app.book.count()
         old_entry[0:1] = []
-        new_entry = app.book.get_entry_list()
-        assert old_entry == new_entry
+    new_entry = app.book.get_entry_list()
+    assert old_entry == new_entry
     assert 0 == len(new_entry)
