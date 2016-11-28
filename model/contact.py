@@ -2,7 +2,7 @@ __author__ = 'NovikovII'
 
 from sys import maxsize
 
-class BookEntry:
+class Contact:
     def __init__(self, **kwargs):
         self.parament = {'id': None, 'lastname': None, 'firstname': None}
         for key, item in kwargs.items():
