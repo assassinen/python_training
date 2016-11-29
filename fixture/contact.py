@@ -67,14 +67,13 @@ class ContactHelper:
                 lastname = cells[1].text
                 firstname = cells[2].text
                 id = element.find_element_by_name("selected[]").get_attribute("value")
-                all_phone = cells[5].text.splitlines()
-                self.contact_cache.append(Contact(lastname=lastname, firstname=firstname, id=id, mobile=all_phone[0]))
+                all_phone = cells[5].text
+                self.contact_cache.append(Contact(lastname=lastname, firstname=firstname, id=id, all_phone_from_home_page = all_phone))
         return list(self.contact_cache)
 
     def open_contact_to_edit_by_index(self, index):
         wd = self.app.wd
         self.open_home_page()
-        #wd.find_element_by_xpath("//table[@id='maintable']/tbody/tr["+str(index+2)+"]/td[8]/a/img").click()
         row = wd.find_elements_by_name("entry")[index]
         cell = row.find_elements_by_tag_name("td")[7]
         cell.find_element_by_tag_name("a").click()
@@ -87,7 +86,7 @@ class ContactHelper:
         cell.find_element_by_tag_name("a").click()
 
     list_contact_fields = ['lastname', 'firstname', 'id', 'address', \
-                           'home', 'mobile', 'work', 'fax',  \
+                           'home', 'mobile', 'work', 'fax', 'phone2',  \
                            'email', 'email2', 'email3']
 
     def get_contact_list_info_from_edit_page(self, index):
