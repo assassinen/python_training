@@ -18,6 +18,7 @@ def test_edit_contact(app):
     old_contact[index] = add_contact
     #вносим изменения
     app.contact.edit_contact_by_index(index, add_contact)
+    #app.contact.open_contact_to_edit_by_index(index)
     #сравниваем количество записей до и после именений
     assert len(old_contact) == app.contact.count()
     #получаем список контактов с web-страницы после изменения
