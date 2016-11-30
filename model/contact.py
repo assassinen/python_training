@@ -9,7 +9,7 @@ class Contact:
             self.parament[key] = item
 
     def __repr__(self):
-        return "%s: %s %s" % (self.parament['id'], self.parament['lastname'],  self.parament['firstname'])
+        return "%s:%s;%s" % (self.parament['id'], self.parament['lastname'],  self.parament['firstname'])
 
     def __eq__(self, other):
         return (self.parament['id'] is None or other.parament['id'] is None or self.parament['id'] == other.parament['id']) \
