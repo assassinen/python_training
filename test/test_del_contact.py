@@ -15,6 +15,7 @@ def test_delete_some_contact(app):
     old_contact[index:index+1] = []
     assert old_contact == new_contact
 
+
 def test_delete_all_contact(app):
     old_contact = app.contact.get_contact_list()
     while len(app.contact.get_contact_list()):
