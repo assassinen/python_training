@@ -43,4 +43,6 @@ class SessionHelper:
             else:
                 self.logout()
         self.login(username, password)
+        if not self.is_logged_in():
+            raise ValueError("incorrect password or user")
 
