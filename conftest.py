@@ -1,8 +1,9 @@
 __author__ = 'NovikovII'
 
 import pytest
-from fixture.application import Application
 import json
+import os.path
+from fixture.application import Application
 
 fixture = None
 target = None
@@ -12,10 +13,10 @@ def app(request):
     global fixture
     global target
     browser = request.config.getoption("--browser")
-
     if target is None:
-        with open("target.json") as config_file:
-            target = json.load(config_file)
+        config_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), request.config.getoption("--target"))
+        with open(config_file) as file:
+            target = json.load(file)
 
     if fixture is None or not fixture.is_valid():
         fixture = Application(browser=browser, base_url=target['baseUrl'])
