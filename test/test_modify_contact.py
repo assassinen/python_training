@@ -13,7 +13,7 @@ def test_edit_contact(app):
     #формируем контакт с изменениями, который хотим внести
     add_contact = Contact(firstname="Алексей", middlename="Иванович", lastname="Баранцев", work="суперпрепод", address="Не дом и не улица", mobile='8915223344')
     #запоминаем id изменяемого контакта и дополняем им созданные вышу контакт
-    add_contact.parament['id'] = old_contact[index].parament['id']
+    add_contact.paramentr['id'] = old_contact[index].paramentr['id']
     #изменяем полученный список в соответсвии с выполненными изменениями
     old_contact[index] = add_contact
     #вносим изменения
