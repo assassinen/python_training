@@ -5,9 +5,9 @@ from model.group import Group
 from random import randrange
 
 
-def test_modify_group_name(app):
+def test_modify_group_name(app, data_groups):
     if app.group.count() == 0:
-        app.group.create(Group(name="test", header="test", footer="test"))
+        app.group.create(data_groups)
     old_groups = app.group.get_group_list()
 
     index = randrange(len(old_groups))
@@ -23,7 +23,7 @@ def test_modify_group_name(app):
 
 def test_modify_group_header(app):
     if app.group.count() == 0:
-        app.group.create(Group(name="test", header="test", footer="test"))
+        app.group.create(data_groups)
     old_groups = app.group.get_group_list()
 
     group = Group(header="modify_header")
@@ -31,6 +31,6 @@ def test_modify_group_header(app):
     app.group.modify(0, group)
 
     assert len(old_groups) == app.group.count()
-    #new_groups = app.group.get_group_list()
-    #old_groups[0] = group
-    #assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+    # new_groups = app.group.get_group_list()
+    # old_groups[0] = group
+    # assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)

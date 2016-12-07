@@ -3,9 +3,9 @@ from model.contact import Contact
 from random import randrange
 
 
-def test_edit_contact(app):
+def test_edit_contact(app, data_contacts):
     if app.contact.count() == 0:
-        add_contact = Contact(firstname="Алексей", middlename="Иларионовна", lastname="Баранцев", work="суперпрепод", address="Не дом и не улица", mobile='8915223344')
+        add_contact = data_contacts
         app.contact.add_contact(add_contact)
     #получаем список контактов с web-страницы
     old_contact = app.contact.get_contact_list()

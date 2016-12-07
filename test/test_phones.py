@@ -8,10 +8,9 @@ def random_contact(app):
     count = app.contact.count()
     return random.randint(0, count-1)
 
-def test_phones_on_home_page(app):
+def test_phones_on_home_page(app, data_contacts):
     if app.contact.count() == 0:
-        add_contact = Contact(firstname="Алексей", middlename="Иларионовна", lastname="Баранцев", work="суперпрепод", address="Не дом и не улица", mobile='8(915)223344')
-        app.contact.add_contact(add_contact)
+        app.contact.add_contact(data_contacts)
     #получаем список контактов с web-страницы
     edit_contact = random_contact(app)
     contact_from_home_page = app.contact.get_contact_list()[edit_contact]
@@ -23,10 +22,9 @@ def test_phones_on_home_page(app):
     assert contact_from_home_page.paramentr['address'] == contact_from_edit_page.paramentr['address']
 
 
-def test_phones_on_contact_view_page(app):
+def test_phones_on_contact_view_page(app, data_contacts):
     if app.contact.count() == 0:
-        add_contact = Contact(firstname="Алексей", middlename="Иларионовна", lastname="Баранцев", work="суперпрепод", address="Не дом и не улица", mobile='8(915)223344')
-        app.contact.add_contact(add_contact)
+        app.contact.add_contact(data_contacts)
     #получаем список контактов с web-страницы
     contact_from_view_page = app.contact.get_contact_from_view_page(0)
     contact_from_edit_page = app.contact.get_contact_list_info_from_edit_page(0)
