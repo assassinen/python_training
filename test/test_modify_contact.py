@@ -11,9 +11,13 @@ def test_edit_contact(app, data_contacts):
     old_contact = app.contact.get_contact_list()
     index = randrange(len(old_contact))
     #формируем контакт с изменениями, который хотим внести
-    add_contact = Contact(firstname="Алексей", middlename="Иванович", lastname="Баранцев", work="суперпрепод", address="Не дом и не улица", mobile='8915223344')
+    add_contact = Contact(mobile='8915223344', middlename="Иванович")
     #запоминаем id изменяемого контакта и дополняем им созданные вышу контакт
     add_contact.paramentr['id'] = old_contact[index].paramentr['id']
+    if add_contact.paramentr['lastname'] is None:
+        add_contact.paramentr['lastname'] = old_contact[index].paramentr['lastname']
+    if add_contact.paramentr['firstname'] is None:
+        add_contact.paramentr['firstname'] = old_contact[index].paramentr['firstname']
     #изменяем полученный список в соответсвии с выполненными изменениями
     old_contact[index] = add_contact
     #вносим изменения
