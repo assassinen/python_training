@@ -47,9 +47,11 @@ def pytest_generate_tests(metafunc):
             testdata = load_from_json(fixture[5:])
             metafunc.parametrize(fixture, testdata, ids=[str(x) for x in testdata])
 
+#загружаются данные из файла data/module.testdata, где testdata - данные уже в файле (может быть constant для data/contacts.py
 def load_from_module(module):
-    return importlib.import_module("data.%s" % module).testdata
+    return importlib.import_module("data.%s" % module).constant
 
+#загружаются данные из файла data/module.json
 def load_from_json(file):
     testdata_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/%s.json" % file)
     with open(testdata_file) as f:

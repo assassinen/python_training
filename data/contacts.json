@@ -1,50 +1,26 @@
 [
   {
-    "py/object": "model.contact.Contact",
     "paramentr": {
-      "firstname": "",
+      "address": "IL",
       "id": null,
-      "address": "I61E",
-      "work": "G4KJmyRl",
-      "lastname": "UMEC",
+      "mobile": "z3P",
+      "work": "oN",
+      "lastname": "oJ6E",
+      "middlename": "3",
+      "firstname": ""
+    },
+    "py/object": "model.contact.Contact"
+  },
+  {
+    "paramentr": {
+      "address": "zntJRbK9a",
+      "id": null,
       "mobile": "",
-      "middlename": "frUyov"
-    }
-  },
-  {
-    "py/object": "model.contact.Contact",
-    "paramentr": {
-      "firstname": "",
-      "id": null,
-      "address": "Q",
-      "work": "H2",
-      "lastname": "qr7TM",
-      "mobile": "d",
-      "middlename": "9SVLBv"
-    }
-  },
-  {
-    "py/object": "model.contact.Contact",
-    "paramentr": {
-      "firstname": "yKOJDYW1",
-      "id": null,
-      "address": "",
-      "work": "Yy",
-      "lastname": "",
-      "mobile": "iEO",
-      "middlename": "h"
-    }
-  },
-  {
-    "py/object": "model.contact.Contact",
-    "paramentr": {
-      "firstname": "yKOJDYW1",
-      "id": null,
-      "address": "LcX8",
-      "work": "KHW",
-      "lastname": "gd",
-      "mobile": "I",
-      "middlename": "MTV065"
-    }
+      "work": "iN48Ln",
+      "lastname": "sp",
+      "middlename": "Wel4EeI",
+      "firstname": "iKkKHKgUR"
+    },
+    "py/object": "model.contact.Contact"
   }
 ]

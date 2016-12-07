@@ -4,7 +4,7 @@ import json
 import os.path
 
 out = 'data/contacts.json'
-out = 'data/groups.json'
+#out = 'data/groups.json'
 
 
 file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', out)
