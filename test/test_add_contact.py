@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
 import pytest
-from data.add_contact import constant as testdata
-from data.add_contact import err_date as testdata
-from data.add_contact import testdata as testdata
+from data.contacts import constant as testdata
+from data.contacts import err_date as testdata
+from data.contacts import testdata as testdata
 
 
 
