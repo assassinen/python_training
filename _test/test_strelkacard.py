@@ -20,9 +20,9 @@ class strelkacard(unittest.TestCase):
 
         testdata = [
             (str(n1)+str(n2)+str(n3)+str(n4))
-            for n1 in range (4,10)
-            for n2 in range (10)
-            for n3 in range (10)
+            for n1 in range (6,10)
+            for n2 in range (9,10)
+            for n3 in range (9,10)
             for n4 in range (10)
         ]
         success = True
@@ -44,6 +44,7 @@ class strelkacard(unittest.TestCase):
             wd.find_element_by_name("cardpin").click()
             wd.find_element_by_name("cardpin").clear()
             wd.find_element_by_name("cardpin").send_keys(i)
+            time.sleep(1)
             wd.find_element_by_xpath("//div[@class='header-addcard-footer']//button[.='Добавить']").click()
             time.sleep(7)
 
