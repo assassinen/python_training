@@ -1,7 +1,7 @@
 __author__ = 'NovikovII'
 from model.group import Group
-import pymysql.cursors
-#import mysql.connector
+#import pymysql.cursors
+import mysql.connector
 
 
 
@@ -11,7 +11,9 @@ class DbFixture:
         self.database = database
         self.user = user
         self.password = password
-        self.connection = pymysql.connect(host=host, database=database, user=user, password=password)
+        self.connection = mysql.connector.connect(host=host, database=database, user=user, password=password)
+        #self.connection = pymysql.connect(host=host, database=database, user=user, password=password)
+        self.connection.autocommit = True
 
     def get_group_list(self):
         list=[]
