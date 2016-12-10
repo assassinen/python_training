@@ -38,7 +38,9 @@ class DbFixture:
             list_contact_fields = ['lastname', 'firstname', 'id', 'address', \
                            'home', 'mobile', 'work', 'fax', 'phone2',  \
                            'email', 'email2', 'email3']
-            cursor.execute("select " + ", ".join([i for i in list_contact_fields]) + " from addressbook")
+            cursor.execute("select " + ", ".join([i for i in list_contact_fields]) + \
+                            " from addressbook where deprecated='0000-00-00 00:00:00'")
+                                    #deprecated is Null" тоже работает...
             for row in cursor:
                 dict_contact_fields = {}
                 for i in range(len(row)):
