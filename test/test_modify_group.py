@@ -4,7 +4,7 @@ __author__ = 'NovikovII'
 from model.group import Group
 import random
 
-def test_modify_group_name(app, data_groups, db):
+def test_modify_group_name(app, db, data_groups, chech_ui):
     if app.group.count() == 0:
         app.group.create(data_groups)
     old_groups = db.get_group_list()
@@ -18,3 +18,5 @@ def test_modify_group_name(app, data_groups, db):
     app.group.modify_group_by_id(group.id, mod_group)
     new_groups = db.get_group_list()
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+    if chech_ui:
+        assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)

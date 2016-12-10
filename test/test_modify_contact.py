@@ -3,7 +3,7 @@ from model.contact import Contact
 from random import randrange
 
 
-def test_edit_contact(app, data_contacts):
+def test_edit_contact(app, data_contacts, chech_ui):
     if app.contact.count() == 0:
         add_contact = data_contacts
         app.contact.add_contact(add_contact)
@@ -28,4 +28,5 @@ def test_edit_contact(app, data_contacts):
     #получаем список контактов с web-страницы после изменения
     new_contact = app.contact.get_contact_list()
     #сравниваем списко контактов до и после изменений
-    assert sorted(old_contact, key=Contact.id_or_max) == sorted(new_contact, key=Contact.id_or_max)
+    if chech_ui:
+        assert sorted(old_contact, key=Contact.id_or_max) == sorted(new_contact, key=Contact.id_or_max)
