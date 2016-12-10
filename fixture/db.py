@@ -40,8 +40,10 @@ class DbFixture:
                            'email', 'email2', 'email3']
             cursor.execute("select " + ", ".join([i for i in list_contact_fields]) + " from addressbook")
             for row in cursor:
-                (id, name, header, footer) = row
-                #list.append(Contact(id=str(id), name=name, header=header, footer=footer))
+                dict_contact_fields = {}
+                for i in range(len(row)):
+                    dict_contact_fields[list_contact_fields[i]] = row[i]
+                list.append(Contact(**dict_contact_fields))
         finally:
             cursor.close()
         return list
