@@ -1,6 +1,6 @@
 __author__ = 'NovikovII'
 from model.group import Group
-#import pymysql.cursors
+from model.contact import Contact
 import mysql.connector
 
 
@@ -19,10 +19,29 @@ class DbFixture:
         list=[]
         cursor = self.connection.cursor()
         try:
-            cursor.execute("select group_id, group_name, group_header, group_footer from group_list")
+            cursor.execute("select group_id, \
+                            group_name, \
+                            group_header, \
+                            group_footer \
+                            from group_list")
             for row in cursor:
                 (id, name, header, footer) = row
                 list.append(Group(id=str(id), name=name, header=header, footer=footer))
+        finally:
+            cursor.close()
+        return list
+
+    def get_contact_list(self):
+        list=[]
+        cursor = self.connection.cursor()
+        try:
+            list_contact_fields = ['lastname', 'firstname', 'id', 'address', \
+                           'home', 'mobile', 'work', 'fax', 'phone2',  \
+                           'email', 'email2', 'email3']
+            cursor.execute("select " + ", ".join([i for i in list_contact_fields]) + " from addressbook")
+            for row in cursor:
+                (id, name, header, footer) = row
+                #list.append(Contact(id=str(id), name=name, header=header, footer=footer))
         finally:
             cursor.close()
         return list
