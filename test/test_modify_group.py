@@ -2,35 +2,21 @@ __author__ = 'NovikovII'
 
 # -*- coding: utf-8 -*-
 from model.group import Group
-from random import randrange
+import random
 
-
-def test_modify_group_name(app):
+def test_modify_group_name(app, db, data_groups, chech_ui):
     if app.group.count() == 0:
-        app.group.create(Group(name="test", header="test", footer="test"))
-    old_groups = app.group.get_group_list()
+        app.group.create(data_groups)
+    old_groups = db.get_group_list()
 
-    index = randrange(len(old_groups))
-    group = Group(name="modify_name")
-    group.id = old_groups[index].id
-    app.group.modify(index, group)
+    group = random.choice(old_groups)
+    old_groups.remove(group)
+    mod_group = Group(name="modify_name")
+    mod_group.id = group.id
+    old_groups.append(mod_group)
 
-    assert len(old_groups) == app.group.count()
-    new_groups = app.group.get_group_list()
-    old_groups[index] = group
+    app.group.modify_group_by_id(group.id, mod_group)
+    new_groups = db.get_group_list()
     assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
-
-
-def test_modify_group_header(app):
-    if app.group.count() == 0:
-        app.group.create(Group(name="test", header="test", footer="test"))
-    old_groups = app.group.get_group_list()
-
-    group = Group(header="modify_header")
-    group.id = old_groups[0].id
-    app.group.modify(0, group)
-
-    assert len(old_groups) == app.group.count()
-    #new_groups = app.group.get_group_list()
-    #old_groups[0] = group
-    #assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+    if chech_ui:
+        assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)

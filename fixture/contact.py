@@ -11,7 +11,7 @@ class ContactHelper:
     def add_contact(self, entry):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
-        for key, item in entry.parament.items():
+        for key, item in entry.paramentr.items():
             if key != 'id':
                 wd.find_element_by_name(key).click()
                 wd.find_element_by_name(key).clear()
@@ -37,7 +37,7 @@ class ContactHelper:
         wd = self.app.wd
         self.open_home_page()
         self.open_contact_to_edit_by_index(index)
-        for key, item in entry.parament.items():
+        for key, item in entry.paramentr.items():
             if key != 'id':
                 wd.find_element_by_name(key).click()
                 wd.find_element_by_name(key).clear()

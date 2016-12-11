@@ -4,16 +4,6 @@ import string
 import time
 import hashlib
 
-def testmd5():
-    st=time.time()
-    md5=hashlib.md5()
-    md5.update(bytes("string_var","UTF-8"))
-;
-    print(time.time()-st)
-
-testmd5()
-
-
 
 
 symbols = [i for i in string.ascii_letters[0:25]]
