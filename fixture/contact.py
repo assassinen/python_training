@@ -2,6 +2,7 @@ __author__ = 'NovikovII'
 
 from model.contact import Contact
 import re
+import time
 
 class ContactHelper:
 
@@ -22,6 +23,18 @@ class ContactHelper:
     def delete_first_contact(self):
         self.delete_contact_by_index(0)
 
+    def select_contact_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        self.open_home_page()
+        self.select_contact_by_id(id)
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
+        self.contact_cache = None
+
     def delete_contact_by_index(self, index):
         wd = self.app.wd
         self.open_home_page()
@@ -32,6 +45,18 @@ class ContactHelper:
 
     def edit_first_contact(self, entry):
         self.edit_contact_by_index(0, entry)
+
+    def edit_contact_by_id(self, id, entry):
+        wd = self.app.wd
+        self.open_home_page()
+        self.open_contact_to_edit_by_id(id)
+        for key, item in entry.paramentr.items():
+            if key != 'id':
+                wd.find_element_by_name(key).click()
+                wd.find_element_by_name(key).clear()
+                wd.find_element_by_name(key).send_keys(item)
+        wd.find_element_by_name("update").click()
+        self.contact_cache = None
 
     def edit_contact_by_index(self, index, entry):
         wd = self.app.wd
@@ -72,6 +97,15 @@ class ContactHelper:
                 all_phone = cells[5].text
                 self.contact_cache.append(Contact(lastname=lastname, firstname=firstname, id=id, address=address, all_phone_from_home_page = all_phone, all_emal_from_home_page = all_email))
         return list(self.contact_cache)
+
+    def open_contact_to_edit_by_id(self, id):
+        wd = self.app.wd
+        self.open_home_page()
+        checkbox = wd.find_element_by_css_selector("input[value='%s']" % id)
+        row = checkbox.find_element_by_xpath("./../..")
+        cell = row.find_elements_by_tag_name("td")[7]
+        time.sleep(2)
+        cell.find_element_by_tag_name("a").click()
 
     def open_contact_to_edit_by_index(self, index):
         wd = self.app.wd

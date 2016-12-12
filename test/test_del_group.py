@@ -19,10 +19,10 @@ def test_delele_some_group(app, db, data_groups, chech_ui):
         assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
 
 
-def test_delele_all_group(app, json_groups):
-    if app.group.count() == 0:
-        app.group.create(json_groups)
-    app.group.delete_all_group()
-    assert 0 == app.group.count()
+# def test_delele_all_group(app, json_groups):
+#     if app.group.count() == 0:
+#         app.group.create(json_groups)
+#     app.group.delete_all_group()
+#     assert 0 == app.group.count()
 
 
