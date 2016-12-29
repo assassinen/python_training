@@ -1,3 +1,1 @@
-__author__ = 'NovikovII'
-
-ghjghjkghjkghjkghjgjkhh
+гит рулит
