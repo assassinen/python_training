@@ -4,6 +4,7 @@ __author__ = 'NovikovII'
 from model.group import Group
 import random
 
+
 def test_modify_group_name(app, db, data_groups, chech_ui):
     if app.group.count() == 0:
         app.group.create(data_groups)

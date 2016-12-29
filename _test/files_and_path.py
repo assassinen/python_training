@@ -19,9 +19,9 @@ import shutil
 # print(os.listdir('.'))
 #
 # #проверяет, файл ли то, что в скобках
-# print(os.path.isfile('test.py'))
+# print(os.path.isfile('test_1.py'))
 # #проверяет, дирректория ли то, что в скобках
-# print(os.path.isdir('test.py'))
+# print(os.path.isdir('test_1.py'))
 #
 # print(list(filter(lambda f: os.path.isfile(f), os.listdir('.'))))
 #
