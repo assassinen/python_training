@@ -80,8 +80,8 @@ def main():
     return True
 
 if __name__ == '__main__':
-    to_incremental_file_path = '/app/fusion/tools/fast_sensor/dumpM1-11-ptest_internet/Incremental_A_239.192.70.3_40003.dump.txt'
-    to_snapshot_file_path = '/app/fusion/tools/fast_sensor/dumpM1-11-ptest_internet/Snapshot_A_239.192.70.4_40004.dump.txt'
+    to_incremental_file_path = './Inc_test.txt'
+    to_snapshot_file_path = './Snap_test.txt'
     i = [0]
     snapshot_items = ['MDEntryPx', 'MDEntrySize', 'MDEntryTime']
 
