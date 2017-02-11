@@ -1,6 +1,7 @@
 __author__ = 'NovikovII'
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+#апдейт
 
 import os
 import sys
